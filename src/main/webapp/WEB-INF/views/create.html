@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add new employee</h3>
+<p>
+    <a th:href="@{/demo}">Go to home</a>
+</p>
+<form th:method="post" th:action="@{/demo/create}" th:object="${employeeForm}" novalidate="novalidate"
+      enctype="multipart/form-data">
+    <div>
+        <label>Name</label>
+        <label>
+            <input type="text" th:field="*{name}">
+        </label>
+    </div>
+    <div>
+        <label>Address</label>
+        <label>
+            <input type="text" th:field="*{address}">
+        </label>
+    </div>
+    <div>
+        <label>Number</label>
+        <label>
+            <input type="text" th:field="*{number}">
+        </label>
+    </div>
+    <div>
+        <label>Salary</label>
+        <label>
+            <input type="text" th:field="*{salary}">
+        </label>
+    </div>
+    <div>
+        <label>Image</label>
+        <label>
+            <input type="file" th:field="*{image}">
+        </label>
+    </div>
+    <div>
+        <label>
+            <input type="submit" value="save">
+        </label>
+    </div>
+
+</form>
+</body>
+</html>
